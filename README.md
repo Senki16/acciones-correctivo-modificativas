@@ -25,7 +25,7 @@ Todo el texto está en `assets/js/data.js`. Para agregar un paper, añada un obj
 
 ## Descargas
 
-Los archivos pesados se publican como *assets* de la versión `material-2026-2` en GitHub Releases. La variable `window.RELEASE_BASE` (al inicio de `data.js`) apunta a esa versión.
+Los archivos para descargar están en la carpeta `descargas/` de este repositorio y se sirven desde GitHub (`window.RELEASE_BASE` en `data.js`). Vercel los ignora (`.vercelignore`) para que el despliegue sea liviano. Para actualizar una clase, reemplace el archivo en `descargas/` con el mismo nombre y haga push.
 
 ## Despliegue
 

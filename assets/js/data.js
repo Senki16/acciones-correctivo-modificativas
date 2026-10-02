@@ -1,5 +1,5 @@
 /* Contenido del sitio: clases, conceptos, ejemplos, preguntas de repaso, descargas y papers. */
-window.RELEASE_BASE = "https://github.com/Senki16/acciones-correctivo-modificativas/releases/download/material-2026-2";
+window.RELEASE_BASE = "https://github.com/Senki16/acciones-correctivo-modificativas/raw/main/descargas";
 window.CURSO = {
   titulo: "Acciones Correctivo-Modificativas",
   programa: "Especialización en Mantenimiento Industrial",
