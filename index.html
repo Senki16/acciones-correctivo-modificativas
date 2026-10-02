@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Acciones Correctivo-Modificativas · EAFIT</title>
+  <meta name="description" content="Material del curso Acciones Correctivo-Modificativas de la Especialización en Mantenimiento Industrial de la Universidad EAFIT: clases, repaso de conceptos, descargas y papers 2026.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Acciones Correctivo-Modificativas · EAFIT">
+  <meta property="og:description" content="Clases, repaso, descargas y papers 2026 del curso.">
+  <meta property="og:image" content="assets/img/hero.webp">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#/" aria-label="Inicio">
+        <img src="assets/img/eafit-azul.png" alt="Universidad EAFIT" width="48" height="30">
+      </a>
+      <nav class="nav__links" id="navlinks" aria-label="Principal">
+        <a href="#/" data-route="inicio">Inicio</a>
+        <a href="#/clases" data-route="clases">Clases</a>
+        <a href="#/repaso" data-route="repaso">Repaso</a>
+        <a href="#/descargas" data-route="descargas">Descargas</a>
+        <a href="#/papers" data-route="papers">Papers 2026</a>
+      </nav>
+      <button class="nav__search" id="openSearch" aria-label="Buscar conceptos">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1"></main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <img src="assets/img/eafit-azul.png" alt="Universidad EAFIT" width="48" height="30">
+        <div>
+          <strong>Acciones Correctivo-Modificativas</strong>
+          <span>Especialización en Mantenimiento Industrial · 2026-2</span>
+        </div>
+      </div>
+      <div class="footer__meta">
+        <span>Docente: Jaime Leonardo Barbosa Pérez</span>
+        <span>Escuela de Ciencias Aplicadas e Ingeniería</span>
+      </div>
+      <nav class="footer__links" aria-label="Pie de página">
+        <a href="#/clases">Clases</a>
+        <a href="#/repaso">Repaso</a>
+        <a href="#/descargas">Descargas</a>
+        <a href="#/papers">Papers 2026</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="search" id="search" hidden>
+    <div class="search__panel" role="dialog" aria-modal="true" aria-label="Buscar conceptos">
+      <div class="search__bar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="searchInput" type="search" placeholder="Buscar un concepto: desvare, cavitación, Pareto…" autocomplete="off">
+        <button class="search__close" id="closeSearch" aria-label="Cerrar búsqueda">Esc</button>
+      </div>
+      <div class="search__results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
