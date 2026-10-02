@@ -240,7 +240,7 @@
     </div></section>
     <section class="section" style="padding-top:12px"><div class="wrap">
       <div class="dl-group reveal"><div class="dl-list">
-        <div class="dl-row"><span class="ficon ficon--zip">ZIP</span><div><div class="dl-row__t">Paquete completo · las 5 clases en PDF</div><div class="dl-row__m">ZIP · 26.8 MB</div></div><div class="dl-row__a"><a class="dl-btn" href="${fileUrl("curso-actualizado-clases-pdf.zip")}" download>${dlIcon}Descargar todo</a></div></div>
+        <div class="dl-row"><span class="ficon ficon--zip">ZIP</span><div><div class="dl-row__t">Paquete completo · las 5 clases en PDF</div><div class="dl-row__m">ZIP · 33.7 MB</div></div><div class="dl-row__a"><a class="dl-btn" href="${fileUrl("curso-actualizado-clases-pdf.zip")}" download>${dlIcon}Descargar todo</a></div></div>
       </div></div>
       ${D.map((g) => `<div class="dl-group reveal"><div class="dl-group__head"><h3>${esc(g.grupo)}</h3><p>${esc(g.desc)}</p></div><div class="dl-list">${g.items.map(dlRow).join("")}</div></div>`).join("")}
       <div class="note">Los trabajos de estudiantes se comparten como material de apoyo del curso; los créditos corresponden a sus autores.</div>
