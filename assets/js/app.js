@@ -7,7 +7,7 @@
   const C = window.CLASES, P = window.PAPERS, D = window.DESCARGAS, CUR = window.CURSO;
   const BASE = (window.RELEASE_BASE || "").replace(/\/$/, "");
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const fileUrl = (name) => (BASE ? `${BASE}/${name}` : `#/descargas`);
+  const fileUrl = (name) => (BASE ? `${BASE}/${name}` : `descargas.html`);
   const arrow = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
   const dlIcon = '<svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>';
   const extIcon = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
@@ -16,7 +16,7 @@
 
   /* ───────── piezas reutilizables */
   const classCard = (c) => `
-    <a class="ccard reveal" href="#/clases/${c.n}">
+    <a class="ccard reveal" href="clase-${c.n}.html">
       <div class="ccard__media"><img src="${c.img}" alt="" loading="lazy"><span class="ccard__num">0${c.n}</span></div>
       <div class="ccard__body"><h3>${esc(c.titulo)}</h3><p>${esc(c.subtitulo)}</p><span class="ccard__go">${arrow}</span></div>
     </a>`;
@@ -63,8 +63,8 @@
           <h1 class="h-display">Acciones <span class="accent">Correctivo-</span><br>Modificativas</h1>
           <p class="lead">Del síntoma a la causa, de la causa a la reparación. Clases, repaso de conceptos, descargas e investigación reciente en un solo lugar.</p>
           <div class="hero__ctas">
-            <a class="btn btn--primary" href="#/clases">Explorar las clases ${arrow}</a>
-            <a class="btn btn--ghost" href="#/repaso">Repasar conceptos</a>
+            <a class="btn btn--primary" href="clases.html">Explorar las clases ${arrow}</a>
+            <a class="btn btn--ghost" href="repaso.html">Repasar conceptos</a>
           </div>
         </div>
       </div>
@@ -81,27 +81,27 @@
     </div></section>
 
     <section class="section" id="clases"><div class="wrap">
-      <div class="sec-head"><div><h2 class="h2">Clases <span class="accent">del curso</span></h2><div class="rule"></div></div><a class="link-more" href="#/clases">Ver todas las clases</a></div>
+      <div class="sec-head"><div><h2 class="h2">Clases <span class="accent">del curso</span></h2><div class="rule"></div></div><a class="link-more" href="clases.html">Ver todas las clases</a></div>
       <div class="classes">${C.map(classCard).join("")}</div>
     </div></section>
 
     <section class="section section--alt"><div class="wrap">
-      <div class="sec-head"><div><h2 class="h2">Repaso <span class="accent">de conceptos</span></h2><div class="rule"></div></div><a class="link-more" href="#/repaso">Ir al repaso</a></div>
+      <div class="sec-head"><div><h2 class="h2">Repaso <span class="accent">de conceptos</span></h2><div class="rule"></div></div><a class="link-more" href="repaso.html">Ir al repaso</a></div>
       <div class="tiles">
-        ${tile("#/repaso?modo=conceptos", ICONS.book, "Conceptos clave", "Las definiciones esenciales de cada clase, listas para leer.")}
-        ${tile("#/repaso?modo=tarjetas", ICONS.cards, "Tarjetas de estudio", "Toque la tarjeta para ver la definición y ponerse a prueba.")}
-        ${tile("#/repaso?modo=quiz", ICONS.check, "Autoevaluación", "Preguntas de selección con respuesta y explicación inmediata.")}
-        ${tile("#/repaso?modo=ruta", ICONS.route, "Ruta de decisión", "Recorra el diagrama: ¿desvare, reparación definitiva o modificación?")}
+        ${tile("repaso.html?modo=conceptos", ICONS.book, "Conceptos clave", "Las definiciones esenciales de cada clase, listas para leer.")}
+        ${tile("repaso.html?modo=tarjetas", ICONS.cards, "Tarjetas de estudio", "Toque la tarjeta para ver la definición y ponerse a prueba.")}
+        ${tile("repaso.html?modo=quiz", ICONS.check, "Autoevaluación", "Preguntas de selección con respuesta y explicación inmediata.")}
+        ${tile("repaso.html?modo=ruta", ICONS.route, "Ruta de decisión", "Recorra el diagrama: ¿desvare, reparación definitiva o modificación?")}
       </div>
     </div></section>
 
     <section class="section"><div class="wrap">
-      <div class="sec-head"><div><h2 class="h2">Descar<span class="accent">gas</span></h2><div class="rule"></div></div><a class="link-more" href="#/descargas">Ver todas las descargas</a></div>
+      <div class="sec-head"><div><h2 class="h2">Descar<span class="accent">gas</span></h2><div class="rule"></div></div><a class="link-more" href="descargas.html">Ver todas las descargas</a></div>
       <div class="dl-list reveal">${D[0].items.map(dlRow).join("")}</div>
     </div></section>
 
     <section class="section section--alt"><div class="wrap">
-      <div class="sec-head"><div><h2 class="h2">Papers <span class="accent">recientes 2026</span></h2><div class="rule"></div></div><a class="link-more" href="#/papers">Ver todos los papers</a></div>
+      <div class="sec-head"><div><h2 class="h2">Papers <span class="accent">recientes 2026</span></h2><div class="rule"></div></div><a class="link-more" href="papers.html">Ver todos los papers</a></div>
       <div class="papers">${[P[0], P[9], P[5]].map((p) => paperCard(p)).join("")}</div>
     </div></section>`;
   }
@@ -133,7 +133,7 @@
         <p>${esc(c.resumen)}</p>
       </div>
     </section>
-    <div class="wrap crumbs"><a href="#/">Inicio</a> › <a href="#/clases">Clases</a> › ${esc(c.titulo)}</div>
+    <div class="wrap crumbs"><a href="index.html">Inicio</a> › <a href="clases.html">Clases</a> › ${esc(c.titulo)}</div>
 
     <section class="section"><div class="wrap">
       <div class="sec-head"><div><h2 class="h2">Ideas <span class="accent">para retener</span></h2><div class="rule"></div></div></div>
@@ -141,7 +141,7 @@
     </div></section>
 
     <section class="section section--alt"><div class="wrap">
-      <div class="sec-head"><div><h2 class="h2">Conceptos <span class="accent">clave</span></h2><div class="rule"></div></div><a class="link-more" href="#/repaso?clase=${c.n}&modo=tarjetas">Practicar con tarjetas</a></div>
+      <div class="sec-head"><div><h2 class="h2">Conceptos <span class="accent">clave</span></h2><div class="rule"></div></div><a class="link-more" href="repaso.html?clase=${c.n}&modo=tarjetas">Practicar con tarjetas</a></div>
       <div class="concepts">${c.conceptos.map(([t, d]) => `<div class="concept reveal"><h4>${esc(t)}</h4><p>${esc(d)}</p></div>`).join("")}</div>
     </div></section>
 
@@ -151,13 +151,13 @@
     </div></section>
 
     <section class="section section--alt"><div class="wrap">
-      <div class="sec-head"><div><h2 class="h2">Material <span class="accent">de la clase</span></h2><div class="rule"></div></div><a class="link-more" href="#/repaso?clase=${c.n}&modo=quiz">Autoevaluarme</a></div>
+      <div class="sec-head"><div><h2 class="h2">Material <span class="accent">de la clase</span></h2><div class="rule"></div></div><a class="link-more" href="repaso.html?clase=${c.n}&modo=quiz">Autoevaluarme</a></div>
       <div class="dl-list reveal">${dlRow(dl)}</div>
     </div></section>
 
     <section class="section--tight"><div class="wrap cnav">
-      ${prev ? `<a href="#/clases/${prev.n}"><small>← Clase anterior</small><strong>${esc(prev.titulo)}</strong></a>` : "<span style='flex:1'></span>"}
-      ${next ? `<a class="next" href="#/clases/${next.n}"><small>Siguiente clase →</small><strong>${esc(next.titulo)}</strong></a>` : `<a class="next" href="#/repaso"><small>Terminó el curso →</small><strong>Repaso general</strong></a>`}
+      ${prev ? `<a href="clase-${prev.n}.html"><small>← Clase anterior</small><strong>${esc(prev.titulo)}</strong></a>` : "<span style='flex:1'></span>"}
+      ${next ? `<a class="next" href="clase-${next.n}.html"><small>Siguiente clase →</small><strong>${esc(next.titulo)}</strong></a>` : `<a class="next" href="repaso.html"><small>Terminó el curso →</small><strong>Repaso general</strong></a>`}
     </div></section>`;
   }
 
@@ -192,12 +192,12 @@
         <div class="score" id="score">Respuestas correctas: <span id="scoreN">0</span> de ${c.quiz.length}</div></div>`;
     if (R.modo === "ruta") return `<div class="decision" id="decision"></div>`;
     return `<div class="concepts">${c.conceptos.map(([t, d]) => `<div class="concept"><h4>${esc(t)}</h4><p>${esc(d)}</p></div>`).join("")}</div>
-      <div class="note">¿Quiere ver la clase completa? <a href="#/clases/${c.n}">Ir a la clase ${c.n}: ${esc(c.titulo)}</a></div>`;
+      <div class="note">¿Quiere ver la clase completa? <a href="clase-${c.n}.html">Ir a la clase ${c.n}: ${esc(c.titulo)}</a></div>`;
   }
 
   function bindRepaso() {
-    $$("[data-modo]").forEach((b) => b.addEventListener("click", () => { R.modo = b.dataset.modo; go(`#/repaso?clase=${R.clase}&modo=${R.modo}`); }));
-    $$("[data-clase]").forEach((b) => b.addEventListener("click", () => { R.clase = +b.dataset.clase; go(`#/repaso?clase=${R.clase}&modo=${R.modo}`); }));
+    $$("[data-modo]").forEach((b) => b.addEventListener("click", () => { R.modo = b.dataset.modo; setRepaso(); }));
+    $$("[data-clase]").forEach((b) => b.addEventListener("click", () => { R.clase = +b.dataset.clase; setRepaso(); }));
     $$(".flip").forEach((f) => f.addEventListener("click", () => f.classList.toggle("is-flipped")));
     const quiz = $("#quiz");
     if (quiz) {
@@ -268,17 +268,17 @@
   }
 
   function viewNotFound() {
-    return `<section class="page-head"><div class="wrap"><h1 class="h1">Página no encontrada</h1><p class="lead">Vuelva al <a href="#/">inicio</a>.</p></div></section>`;
+    return `<section class="page-head"><div class="wrap"><h1 class="h1">Página no encontrada</h1><p class="lead">Vuelva al <a href="index.html">inicio</a>.</p></div></section>`;
   }
 
   /* ───────── búsqueda */
   const INDEX = [];
   C.forEach((c) => {
-    INDEX.push({ t: `Clase ${c.n}: ${c.titulo}`, d: c.subtitulo, k: "Clase", h: `#/clases/${c.n}` });
-    c.conceptos.forEach(([t, d]) => INDEX.push({ t, d, k: `Clase ${c.n}`, h: `#/clases/${c.n}` }));
-    c.ejemplos.forEach(([t, d]) => INDEX.push({ t, d, k: `Ejemplo · Clase ${c.n}`, h: `#/clases/${c.n}` }));
+    INDEX.push({ t: `Clase ${c.n}: ${c.titulo}`, d: c.subtitulo, k: "Clase", h: `clase-${c.n}.html` });
+    c.conceptos.forEach(([t, d]) => INDEX.push({ t, d, k: `Clase ${c.n}`, h: `clase-${c.n}.html` }));
+    c.ejemplos.forEach(([t, d]) => INDEX.push({ t, d, k: `Ejemplo · Clase ${c.n}`, h: `clase-${c.n}.html` }));
   });
-  P.forEach((p) => INDEX.push({ t: p.t, d: `${p.r} · ${p.f}`, k: "Paper 2026", h: "#/papers" }));
+  P.forEach((p) => INDEX.push({ t: p.t, d: `${p.r} · ${p.f}`, k: "Paper 2026", h: "papers.html" }));
   const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
   function openSearch() { $("#search").hidden = false; $("#searchInput").value = ""; doSearch(""); setTimeout(() => $("#searchInput").focus(), 30); }
   function closeSearch() { $("#search").hidden = true; }
@@ -302,34 +302,31 @@
   toggle.addEventListener("click", () => { const o = links.classList.toggle("is-open"); toggle.setAttribute("aria-expanded", o); });
   links.addEventListener("click", (e) => { if (e.target.tagName === "A") { links.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); } });
 
-  /* ───────── enrutador */
-  function parse() {
-    const h = location.hash.replace(/^#/, "") || "/";
-    const [path, qs] = h.split("?");
-    const q = Object.fromEntries(new URLSearchParams(qs || ""));
-    return { parts: path.split("/").filter(Boolean), q };
+  /* ───────── páginas: cada sección es un archivo HTML independiente */
+  const PAGE = document.body.dataset.page || "inicio";
+  const Q = Object.fromEntries(new URLSearchParams(location.search));
+  function setRepaso() {
+    history.replaceState(null, "", `repaso.html?clase=${R.clase}&modo=${R.modo}`);
+    render();
   }
-  function go(h) { if (location.hash === h) render(); else location.hash = h; }
-  let lastPath = "";
   function render() {
-    const { parts, q } = parse();
-    const r = parts[0] || "inicio";
-    let html, bind, active = r, title = "";
-    if (r === "inicio") { html = viewHome(); title = ""; }
-    else if (r === "clases" && parts[1]) { html = viewClase(+parts[1]); active = "clases"; title = (C[+parts[1] - 1] || {}).titulo; }
-    else if (r === "clases") { html = viewClases(); title = "Clases"; }
-    else if (r === "repaso") { html = viewRepaso(q); bind = bindRepaso; title = "Repaso"; }
-    else if (r === "descargas") { html = viewDescargas(); title = "Descargas"; }
-    else if (r === "papers") { html = viewPapers(); bind = bindPapers; title = "Papers 2026"; }
+    let html, bind;
+    if (PAGE === "inicio") html = viewHome();
+    else if (PAGE === "clase") html = viewClase(+document.body.dataset.n);
+    else if (PAGE === "clases") html = viewClases();
+    else if (PAGE === "repaso") { html = viewRepaso(Q); bind = bindRepaso; Q.clase = Q.modo = undefined; }
+    else if (PAGE === "descargas") html = viewDescargas();
+    else if (PAGE === "papers") { html = viewPapers(); bind = bindPapers; }
     else html = viewNotFound();
     main.innerHTML = html;
     if (!$("#search").hidden) closeSearch();
     if (bind) bind();
-    document.title = (title ? title + " · " : "") + "Acciones Correctivo-Modificativas · EAFIT";
-    $$(".nav__links a").forEach((a) => a.classList.toggle("is-active", a.dataset.route === active));
-    const path = parts.join("/");
-    if (path !== lastPath) window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
-    lastPath = path;
+    const active = PAGE === "clase" ? "clases" : PAGE;
+    $$(".nav__links a").forEach((a) => {
+      const on = a.dataset.route === active;
+      a.classList.toggle("is-active", on);
+      if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
     observe();
   }
   let io;
@@ -339,6 +336,5 @@
     io = new IntersectionObserver((ents) => ents.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } }), { rootMargin: "0px 0px -8% 0px" });
     $$(".reveal").forEach((el, i) => { el.style.transitionDelay = `${Math.min(i % 6, 5) * 60}ms`; io.observe(el); });
   }
-  window.addEventListener("hashchange", render);
   render();
 })();

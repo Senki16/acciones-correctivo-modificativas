@@ -10,7 +10,13 @@ Sitio del curso **Acciones Correctivo-Modificativas** de la Especialización en 
 ## Estructura
 
 ```
-index.html            página única (enrutamiento por #)
+index.html            inicio
+clases.html           índice de clases
+clase-1.html … clase-5.html  una página por clase
+repaso.html           repaso (conceptos, tarjetas, autoevaluación, ruta de decisión)
+descargas.html        descargas
+papers.html           papers 2026
+404.html              página no encontrada
 assets/css/styles.css estilos
 assets/js/data.js     contenido: clases, preguntas, descargas y papers
 assets/js/app.js      vistas y lógica
