@@ -235,8 +235,8 @@ window.DESCARGAS = [
     items: [
       { t: "Clase 1 · La máquina", f: "clase-1-la-maquina", tipos: [["pdf", 8.8], ["pptx", 36.5]] },
       { t: "Clase 2 · Fallas y daños", f: "clase-2-fallas-y-danos", tipos: [["pdf", 6.1], ["pptx", 24.0]] },
-      { t: "Clase 3 · Diagnóstico de fallos", f: "clase-3-diagnostico-de-fallos", tipos: [["pdf", 17.5], ["pptx", 74.9]] },
-      { t: "Clase 4 · Acciones correctivas", f: "clase-4-acciones-correctivas", tipos: [["pdf", 3.1], ["pptx", 13.6]] },
+      { t: "Clase 3 · Diagnóstico de fallos", f: "clase-3-diagnostico-de-fallos", tipos: [["pdf", 34.0], ["pptx", 46.5]] },
+      { t: "Clase 4 · Acciones correctivas", f: "clase-4-acciones-correctivas", tipos: [["pdf", 3.3], ["pptx", 14.9]] },
       { t: "Clase 5 · Acciones modificativas", f: "clase-5-acciones-modificativas", tipos: [["pdf", 1.8], ["pptx", 6.4]] },
     ],
   },
